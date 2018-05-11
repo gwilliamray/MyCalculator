@@ -40,7 +40,25 @@ namespace MyCalculator
 
         private bool DataValid()
         {
-            return true;
+            if (IsDecimal(txtNumber1) && IsDecimal(txtNumber2))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool IsDecimal(TextBox tb)
+        {
+            decimal num;
+            if(decimal.TryParse(tb.Text, out num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
         }
     }
 }
