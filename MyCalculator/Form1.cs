@@ -23,13 +23,24 @@ namespace MyCalculator
             decimal number2;
             decimal answer;
 
-            number1 = Convert.ToDecimal(txtNumber1.Text);
-            number2 = Convert.ToDecimal(txtNumber2.Text);
+            if (DataValid())
+            {
+                number1 = Convert.ToDecimal(txtNumber1.Text);
+                number2 = Convert.ToDecimal(txtNumber2.Text);
 
-            answer = number1 + number2;
+                answer = number1 + number2;
 
-            txtAnswer.Text = Convert.ToString(answer);
+                txtAnswer.Text = Convert.ToString(answer);
+            }
+            else
+            {
+                MessageBox.Show("Problems here");
+            }
+        }
 
+        private bool DataValid()
+        {
+            return true;
         }
     }
 }
